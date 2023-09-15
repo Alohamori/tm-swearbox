@@ -13,8 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (s = location.hash) {
     const checks = qsa('input[type=checkbox]');
-    const bits = Number(s.slice(1, -1)).toString(2).padStart(38, '0');
-    for (let i = 0; i < 38; ++i)
+    const bits = Number(s.slice(1, -1)).toString(2).padStart(39, '0');
+    for (let i = 0; i < 39; ++i)
       checks[i].checked = bits[i] * 1 ? false : true;
     qsa('#sort input')['nsp'.indexOf(s.slice(-1))].checked = true;
   }
@@ -31,13 +31,14 @@ const select = (e, s) => {
 const update = () => {
   const words = Array.from(qsa('#words input')).map(e => e.checked ? e.nextSibling.textContent : '')
   const series = Array.from(qsa('#series input')).map(e => e.checked);
-  const [stud, rec, perep] = Array.from(qsa('#misc input')).map(e => e.checked);
+  const [stud, rec, perep, chamo] = Array.from(qsa('#misc input')).map(e => e.checked);
   const sort = Array.from(qsa('#sort input')).findIndex(e => e.checked);
 
   spec.data['values'] = [];
   const seen = {};
   for (const [word, v] of Object.entries(data)) {
     for (let i = 0; i < 75; ++i) {
+      if (chamo && !champs.includes(i)) continue;
       const cs = Math.floor(i / 5);
       if (words.includes(word) && series[cs]) {
         let n = 0;
