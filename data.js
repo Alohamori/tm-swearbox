@@ -35,7 +35,7 @@ const spec = {
   "layer": [
     {"mark": "bar",
       "transform": [
-        {"calculate": "'https://prettygr.im/tdlm/taskmaster/profanity?speaker=' + datum.cid + '&roots__arraycontains=' + datum.word", "as": "query"},
+        {"calculate": null, "as": "query"},
         {"calculate": "datum.word + ': ' + datum.n", "as": "tip"},
       ],
       "encoding": {

@@ -58,6 +58,10 @@ const update = () => {
   spec.layer[0].encoding.color.scale['domain'] = Object.keys(seen);
   spec.layer[0].encoding.color.scale['range'] = Object.values(seen);
 
+  let query = "'https://prettygr.im/tdlm/taskmaster/profanity?speaker=' + datum.cid + '&roots__arraycontains=' + datum.word";
+  if (stud != rec) query += `+ '&studio=${stud ? 1 : 0}'`;
+  spec.layer[0].transform[0]['calculate'] = query
+
   vegaEmbed('#vis', spec, opts).catch(console.warn);
 
   const ticks = Array.from(qsa('input[type=checkbox]')).map(e => e.checked ? 0 : 1);
