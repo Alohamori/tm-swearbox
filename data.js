@@ -1,6 +1,7 @@
 const names = "Frank Skinner,Josh Widdicombe,Roisin Conaty,Romesh Ranganathan,Tim Key,Doc Brown,Joe Wilkinson,Jon Richardson,Katherine Ryan,Richard Osman,Al Murray,Dave Gorman,Paul Chowdhry,Rob Beckett,Sara Pascoe,Hugh Dennis,Joe Lycett,Lolly Adefope,Mel Giedroyc,Noel Fielding,Aisling Bea,Bob Mortimer,Mark Watson,Nish Kumar,Sally Phillips,Alice Levine,Asim Chaudhry,Liza Tarbuck,Russell Howard,Tim Vine,James Acaster,Jessica Knappett,Kerry Godliman,Phil Wang,Rhod Gilbert,Iain Stirling,Joe Thomas,Lou Sanders,Paul Sinha,Sian Gibson,David Baddiel,Ed Gamble,Jo Brand,Katy Wix,Rose Matafeo,Daisy May Cooper,Johnny Vegas,Katherine Parkinson,Mawaan Rizwan,Richard Herring,Charlotte Ritchie,Jamali Maddix,Lee Mack,Mike Wozniak,Sarah Kendall,Alan Davies,Desiree Burch,Guz Khan,Morgana Robinson,Victoria Coren Mitchell,Ardal O'Hanlon,Bridget Christie,Chris Ramsey,Judi Love,Sophie Duker,Dara Ó Briain,Fern Brady,John Kearns,Munya Chawawa,Sarah Millican,Frankie Boyle,Ivo Graham,Jenny Eclair,Kiell Smith-Bynoe,Mae Martin".split(',');
 
 const cids = '3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 63 64 65 66 67 68 69 70 71 72 78 79 80 81 82 88 89 90 91 92 98 99 100 101 102'.split(' ');
+const eps = [6,5,5,8,8,10,10,10,10,10,10,10,10,10,10];
 
 const data = {
   "ass/arse":[[,,2,,,,4,,,,,,,1,,,,,,,,1,,,2,2,,2,,,3,,,,,,,,,,4,1,2,,1,,2,,,,,,,,,,,3,2,,,,2,,1,3,2,,,,,,1],[,,,,,,,,,,,,,,,,,,,,,,,,,,4,2,2,,1,1,,,,,,,,,1,,,,,,,,2,,,1,1,,,,,3,4,,,,,1]],

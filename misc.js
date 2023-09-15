@@ -20,10 +20,13 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   update();
+  qsa('input').forEach(e => e.onchange = update);
 });
 
-const select = (e, s) => qsa(`${e} input`).forEach(e => e.checked = s);
-const eps = [6,5,5,8,8,10,10,10,10,10,10,10,10,10,10];
+const select = (e, s) => {
+  qsa(`${e} input`).forEach(e => e.checked = s);
+  update();
+};
 
 const update = () => {
   const words = Array.from(qsa('#words input')).map(e => e.checked ? e.nextSibling.textContent : '')
