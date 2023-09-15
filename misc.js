@@ -4,7 +4,7 @@ const qsa = s => document.querySelectorAll(s);
 window.addEventListener('DOMContentLoaded', () => {
   let s = [];
   for (let word in data)
-    s.push(`<label><input type="checkbox" ${['fuck', 'shit'].includes(word) ? 'checked' : ''}>${word}</label> `);
+    s.push(`<label><input type="checkbox" checked>${word}</label> `);
   qs('#words').innerHTML += s.join('');
   s = [];
   for (let i = 1; i <= 15; ++i)
@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const checks = qsa('input[type=checkbox]');
     const bits = Number(s.slice(1, -1)).toString(2).padStart(38, '0');
     for (let i = 0; i < 38; ++i)
-      checks[i].checked = bits[i] * 1;
+      checks[i].checked = bits[i] * 1 ? false : true;
     qsa('#sort input')['nsp'.indexOf(s.slice(-1))].checked = true;
   }
 
@@ -57,6 +57,6 @@ const update = () => {
 
   vegaEmbed('#vis', spec, opts).catch(console.warn);
 
-  const ticks = Array.from(qsa('input[type=checkbox]')).map(e => e.checked * 1);
+  const ticks = Array.from(qsa('input[type=checkbox]')).map(e => e.checked ? 0 : 1);
   location.hash = parseInt(ticks.join(''), 2) + 'nsp'[sort];
 };
