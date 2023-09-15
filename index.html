@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taskmaster Swear Box</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.12.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+    <script src="data.js"></script>
+    <script src="misc.js"></script>
+  </head>
+  <body>
+    <div id="words"><b>words</b> (<a href="javascript:select('#words', 1);">all</a> / <a href="javascript:select('#words', 0);">none</a>)</div>
+    <div id="series"><b>series</b> (<a href="javascript:select('#series', 1);">all</a> / <a href="javascript:select('#series', 0);">none</a>)&nbsp;&nbsp;</div>
+    <div id="misc">
+      <b>misc.</b>
+      <label><input type="checkbox" checked> in-studio</label>
+      <label><input type="checkbox" checked> pre-recorded</label>
+      <label><input type="checkbox"> per episode</label>
+    </div>
+    <div id="sort">
+      <b>sort by</b>
+      <label><input type="radio" name="sort" /> name</label>
+      <label><input type="radio" name="sort" /> series</label>
+      <label><input type="radio" name="sort" checked /> profanity</label>
+    </div>
+    <div><button onclick="update();">Update</button></div>
+    <div id="vis"></div>
+  </body>
+</html>
